@@ -1,0 +1,49 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.3'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.sg'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(23)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring Boot Web (for REST APIs)
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Spring Boot JPA (for database access)
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// H2 Database (for testing)
+	runtimeOnly 'com.h2database:h2'
+
+	// Spring Boot Testing
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Cucumber Dependencies
+	testImplementation 'io.cucumber:cucumber-spring:7.14.0'
+	testImplementation 'io.cucumber:cucumber-java:7.14.0'
+	testImplementation 'io.cucumber:cucumber-junit:7.14.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
