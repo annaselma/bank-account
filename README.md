@@ -37,19 +37,6 @@ src/
 │   │   ├── infrastructure/ # Adapters (Repositories, Controllers, API Interfaces)
 │   │   ├── resources/    # Configuration Files
 │   │   ├── BankApplication.java  # Main Spring Boot Application
-│
-├── frontend/  ✅ (NEW - Angular Frontend will be available in next commit)
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── components/
-│   │   │   ├── services/
-│   │   │   ├── pages/
-│   │   │   ├── models/
-│   │   │   ├── app.module.ts
-│   │   │   ├── app.component.ts
-│   ├── angular.json
-│   ├── package.json
-│
 ├── test/
 │   ├── java/com/bank/account/
 │   │   ├── infrastructure/resource/  # Unit Tests (JUnit + Mockito)
